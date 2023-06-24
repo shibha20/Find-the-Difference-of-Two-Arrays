@@ -1,0 +1,27 @@
+class Solution(object):
+    def findDifference(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[List[int]]
+        """
+
+        not_in_nums2 =[]
+        not_in_nums1 = []
+
+        final_array =[]
+
+        for i in nums1:
+            if i not in nums2:
+                if i not in not_in_nums2:
+                    not_in_nums2.append(i)
+
+        for i in nums2:
+            if i not in nums1:
+                if i not in not_in_nums1:
+                    not_in_nums1.append(i)
+
+        final_array.append(not_in_nums2)
+        final_array.append(not_in_nums1)
+
+        return final_array
